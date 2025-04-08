@@ -838,6 +838,7 @@ class StepByStepCOTGenParticipant(ParticipantModel):
 
             prompt = "\n\n\n".join([self.prompt, test_example_str]).strip()
 
+            # TODO, XINGKUN YIN, it is not the cot I think, it is a call, then retrieve, then call again
             output_text_scores = self.generator.generate_text_sequence(prompt)
             if len(output_text_scores) > 1:
                 print("Can not handle more than one answer for this model yet" + "\n" + str(output_text_scores))
